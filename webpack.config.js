@@ -6,13 +6,18 @@ module.exports = {
     path: __dirname,
     filename: 'main.js'
   },
-  module:{
-  	rules:[
-  		{
-  	  		test: /\.(jsx|js)$/,
-  	  		exclude:/node-modules/,
-  	  		use:'babel-loader'
-  	  	}
-  	  	]
+  module: {
+    rules: [
+      {
+        test: /\.(jsx|js)$/,
+        exclude: /node-modules/,
+        use: 'babel-loader'
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+
+    ]
   }
 }
