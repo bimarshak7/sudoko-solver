@@ -1,3 +1,42 @@
+*{
+background:black;
+color: white;
+}
 .box{
 text-align: center;
+}
+.row{
+  display: flex;
+  justify-content: center;
+}
+.el{
+	height: 45px;
+	width: 45px;
+	font-size: 1.5rem;
+	margin-top: 1px;
+}
+.selected{
+	background: green;
+}
+.btn{
+	margin: 12px;
+	padding: 7px;
+}
+.hor{
+	border-bottom: 5px solid aqua;
+}
+.vert{
+	border-right: 5px solid aqua;
+}
+
+.possibles{
+	margin-top: 12px;
+	height: 40px;
+	width: 40px;
+	border: 3px solid gold;
+}
+
+.message{
+	color: forestgreen;
+	font-size: 2em;
 }
