@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  entry: path.join(__dirname, 'index.js'),
+  entry: path.join(__dirname, 'index.jsx'),
   output: {
     path: __dirname,
     filename: 'main.js'
