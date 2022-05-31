@@ -6,7 +6,6 @@ function Possibles({ board, pos, setGrid, setMessage }) {
 
   useEffect(() => {
     const avails = getAvailableNumbers(board, pos);
-    avails.unshift(0);
     setPosibles(avails, board, possibles);
   }, [pos,board]);
 
@@ -19,10 +18,18 @@ function Possibles({ board, pos, setGrid, setMessage }) {
     setGrid(board);
     setMessage('')
   };
+  const checkPossible = number=>{
+    for(let i=0;i<10;i++){
+      if(possibles[i]===number) return true
+    }
+    return false
+  }
   return (
     <div>
-      {possibles.map((opt) => (
-        <button type="button" key={opt} onClick={() => { updateGrid(opt);}} className="possibles">
+      {[0,1,2,3,4,5,6,7,8,9].map((opt) => (
+        <button type="button" key={opt}
+          onClick={checkPossible(opt) || opt==0?() => { updateGrid(opt);}:''}
+          className={`possibles ${!checkPossible(opt) && opt !== 0?'inactive':''}`}>
           {opt === 0 ? 'X' : opt}
         </button>
       ))}
